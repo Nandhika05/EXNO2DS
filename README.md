@@ -1,6 +1,10 @@
 # EXNO2DS
+
+## Name : Nandhika P
+
+## Reg no : 212223040125
 # AIM:
-      To perform Exploratory Data Analysis on the given data set.
+   To perform Exploratory Data Analysis on the given data set.
       
 # EXPLANATION:
   The primary aim with exploratory analysis is to examine the data for distribution, outliers and anomalies to direct specific testing of your hypothesis.
@@ -23,7 +27,99 @@ STEP 7: Use cross tabulation method to quantitatively analyze the relationship b
 STEP 8: Use heatmap method of representation to show relationships between two variables, one plotted on each axis.
 
 ## CODING AND OUTPUT
-        <<INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS>>
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df=pd.read_csv("/content/titanic_dataset.csv")
+df
+```
+
+![image](https://github.com/user-attachments/assets/d9262dba-93d2-4adb-9583-6dd0ca86a39b)
+
+```
+df.info()
+```
+
+![image](https://github.com/user-attachments/assets/8e6da9d5-8d58-4fae-afe3-9e0d46c1ab47)
+
+```
+df.shape
+```
+
+![image](https://github.com/user-attachments/assets/1a85141d-8b74-4069-9469-23081e0d57ce)
+
+```
+df.set_index("PassengerId",inplace=True)
+df.describe()
+```
+
+![image](https://github.com/user-attachments/assets/25dde7ef-0e50-4314-b728-2a5ba0a50570)
+
+```
+df.shape
+```
+
+![image](https://github.com/user-attachments/assets/8df7342e-feeb-4916-b9e4-c4ae3ccf7fc3)
+
+```
+df.nunique()
+```
+
+![image](https://github.com/user-attachments/assets/28b513ff-6e2e-4d47-87d0-9089b30c6700)
+
+```
+df["Survived"].value_counts()
+```
+
+![image](https://github.com/user-attachments/assets/57bd6238-28ff-42e8-8d51-a0a48d6f3e1b)
+
+```
+per=(df["Survived"].value_counts()/df.shape[0]*100).round(2)
+per
+```
+
+![image](https://github.com/user-attachments/assets/eb9b7748-6692-4a7d-a102-400e55dd5601)
+
+```
+sns.countplot(data=df,x='Survived')
+```
+
+![image](https://github.com/user-attachments/assets/d7c50d24-4ace-4039-bd2c-9cd3fd395858)
+
+```
+df
+```
+
+![image](https://github.com/user-attachments/assets/4d8cf112-36db-42df-b608-a82f0827401a)
+
+```
+df.Pclass.unique()
+```
+
+![image](https://github.com/user-attachments/assets/1345d76d-4062-45ac-9d1a-99fb39f5c645)
+
+```
+df.rename(columns={'Sex':'Gender'},inplace=True)
+df
+```
+
+![image](https://github.com/user-attachments/assets/4a9b0d4d-5bf5-48b7-9310-73c387fb30c5)
+
+```
+sns.catplot(x="Gender",col="Survived",kind="count",data=df,height=5,aspect=.7)
+```
+
+![image](https://github.com/user-attachments/assets/22970a77-d53f-4b5b-977e-83c7164ee1ad)
+
+```
+sns.catplot(x="Survived",hue="Gender",data=df,kind="count")
+```
+
+![image](https://github.com/user-attachments/assets/0f3b91ac-3384-4037-9bd7-0ba84ae2f316)
+
+
 
 # RESULT
         <<INCLUDE YOUR RESULT HERE>>

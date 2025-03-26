@@ -107,6 +107,7 @@ df
 
 ![image](https://github.com/user-attachments/assets/4a9b0d4d-5bf5-48b7-9310-73c387fb30c5)
 
+## Bivariate Analysis
 ```
 sns.catplot(x="Gender",col="Survived",kind="count",data=df,height=5,aspect=.7)
 ```

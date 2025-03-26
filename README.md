@@ -119,6 +119,52 @@ sns.catplot(x="Survived",hue="Gender",data=df,kind="count")
 
 ![image](https://github.com/user-attachments/assets/0f3b91ac-3384-4037-9bd7-0ba84ae2f316)
 
+```
+df.boxplot(column="Age",by="Survived")
+```
+
+![image](https://github.com/user-attachments/assets/2d6e52f9-9423-4fbf-82fd-71d5589b7a20)
+
+```
+sns.scatterplot(x=df["Age"],y=df["Fare"])
+```
+
+![image](https://github.com/user-attachments/assets/0e4fbc04-175b-462b-98af-dadc5e4ac685)
+
+```
+sns.jointplot(x="Age",y="Fare",data=df)
+```
+
+![image](https://github.com/user-attachments/assets/e4ce6d08-c73f-4a3a-89a2-0970b981e590)
+
+```
+fig,ax1=plt.subplots(figsize=(8,5))
+plt=sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
+```
+
+![image](https://github.com/user-attachments/assets/28caff4e-fe59-4648-98db-d97c8b0fd273)
+
+```
+sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
+```
+
+![image](https://github.com/user-attachments/assets/955a3152-cfb9-4435-b9d2-49610504be18)
+
+```
+corr=df.corr(numeric_only=True)
+sns.heatmap(corr,annot=True)
+```
+
+![image](https://github.com/user-attachments/assets/23e71ded-ac6c-4649-83b8-cd5fc350a960)
+
+```
+sns.pairplot(df)
+```
+
+![image](https://github.com/user-attachments/assets/2aa0d52a-4692-46b3-bba5-e1949d2aa969)
+
+
+![image](https://github.com/user-attachments/assets/47a0bc5f-8704-4e52-9fcf-f63de1a63378)
 
 
 # RESULT

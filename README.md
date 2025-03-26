@@ -151,6 +151,8 @@ sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
 
 ![image](https://github.com/user-attachments/assets/955a3152-cfb9-4435-b9d2-49610504be18)
 
+## Co-relation 
+
 ```
 corr=df.corr(numeric_only=True)
 sns.heatmap(corr,annot=True)
@@ -169,4 +171,5 @@ sns.pairplot(df)
 
 
 # RESULT
-        <<INCLUDE YOUR RESULT HERE>>
+
+We have performed Exploratory Data Analysis on  the given data set successfully.
